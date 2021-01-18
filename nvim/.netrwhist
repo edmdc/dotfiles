@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/edmdc/.dotfiles/nvim'
+let g:netrw_dirhist_6='/Users/edmdc/.dotfiles'
+let g:netrw_dirhist_5='/Users/edmdc/.dotfiles/nvim'
+let g:netrw_dirhist_4='/Users/edmdc/.dotfiles'
+let g:netrw_dirhist_3='/Users/edmdc/.config/nvim'
+let g:netrw_dirhist_2='/Users/edmdc/.config'
+let g:netrw_dirhist_1='/Users/edmdc/.config/nvim'
+let g:netrw_dirhist_0='/Users/edmdc/.config'
+let g:netrw_dirhist_9='/Users/edmdc/.config/nvim'
+let g:netrw_dirhist_8='/Users/edmdc/.config'
