@@ -230,24 +230,4 @@ gls.right[8] = {
   }
 }
 
----------------------------------------------------------------------------------------------
---gls.short_line_left[1] = {
-  --BufferType = {
-    --provider = 'FileTypeName',
---    separator = '',
-  --  separator_highlight = {colors.purple,colors.bg},
-    --highlight = {colors.grey,colors.purple}
---  }
---}
-
---[[
-gls.short_line_right[1] = {
-  BufferIcon = {
-    provider= 'BufferIcon',
-    separator = '',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.grey,colors.purple}
-  }
-}
-]]
-a
+gl.load_galaxyline()

@@ -26,7 +26,6 @@ set noswapfile " set no swap file
 set nobackup " set no backup file
 
 set list
-set listchars=tab:\|\ ,nbsp:•
 let g:indentLine_defaultGroup = 'SpecialKey'
 
 set nowritebackup
