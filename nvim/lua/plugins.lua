@@ -8,10 +8,14 @@ return require('packer').startup(function()
   -- use 'ojroques/nvim-lspfuzzy'
   use 'morhetz/gruvbox'
   use {
-          'glepnir/galaxyline.nvim',
-          branch = 'main',
-          config = function() require 'spaceline' end,
-          requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        config = function() require 'spaceline' end,
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      }
+  use {
+        'romgrk/barbar.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
       }
 
   use 'tpope/vim-surround'
