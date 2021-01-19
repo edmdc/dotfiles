@@ -5,7 +5,7 @@ export ZSH="/Users/edmdc/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kolo"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -67,8 +67,8 @@ alias dots='cd ~/.dotfiles'
 alias ta='tmux attach -t'
 alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
-alias tkill = 'tmux kill-server'
-alias tkiss = 'tmux kill-session -t'
+alias tkill='tmux kill-server'
+alias tkiss='tmux kill-session -t'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
