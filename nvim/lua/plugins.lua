@@ -2,22 +2,30 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
+
+  -- ## Syntax Highlight ## --
   use 'nvim-treesitter/nvim-treesitter'
+  use 'jparise/vim-graphql'
+
+  -- ## Fuzzy File Finder ## --
   use {'junegunn/fzf', run = ':fzf#install()'}
   use 'junegunn/fzf.vim'
-  -- use 'ojroques/nvim-lspfuzzy'
-  use 'morhetz/gruvbox'
+  
+  -- ## Autocompletion ## --
+  use {'neoclide/coc.nvim', branch = 'release'}
+
+  -- ## Coloscheme, Statusline, BufferBar ## --
+  -- use 'morhetz/gruvbox'
+  use 'sainnhe/gruvbox-material'
+  use 'kyazdani42/nvim-web-devicons'
   use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
         config = function() require 'spaceline' end,
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
       }
-  use {
-        'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-      }
+  use 'romgrk/barbar.nvim' 
 
+  -- ## Tpope Classics ## --
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-commentary'
@@ -27,9 +35,10 @@ return require('packer').startup(function()
 
   use 'psliwka/vim-smoothie'
   use 'justinmk/vim-sneak'
-  use 'preservim/nerdtree'
+  use {'preservim/nerdtree', requires = {'ryanoasis/vim-devicons', 'vwxyutarooo/nerdtree-devicons-syntax'}}
   use 'tmux-plugins/vim-tmux-focus-events'
   use 'tmux-plugins/vim-tmux'
   use 'thaerkh/vim-indentguides'
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use 'iamcco/markdown-preview.nvim'
+  use 'mhinz/vim-signify'
 end)

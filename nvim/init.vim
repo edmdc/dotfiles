@@ -1,13 +1,11 @@
 scriptencoding utf-8
-" source ~/.config/nvim/plugins.vim
-" source ~/.config/nvim/lua/spaceline.lua
 " Remap leader key
 let mapleader="\<SPACE>"
 " Reload config file
+lua require('plugins')
 map <C-R> :source ~/.config/nvim/init.vim<CR>
 
-filetype plugin indent on    " required
-lua require 'spaceline'
+" filetype plugin indent on    " required
 
 syntax enable
 set mouse=a
@@ -46,13 +44,21 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-let g:gruvbox_italic = '1'
-let g:gruvbox_italicize_strings = '1'
-let g:gruvbox_invert_indent_guides = '1'
+" let g:gruvbox_italic = '1'
+" let g:gruvbox_italicize_strings = '1'
+" let g:gruvbox_invert_indent_guides = '1'
 set termguicolors
-colorscheme gruvbox
-highlight Comment cterm=italic gui=italic
+" let g:sonokai_style = 'shusia'
+" let g:sonokai_enable_italic = 1
+" let g:sonokai_disable_italic_comment = 1
+" colorscheme sonokai
 
+set background=dark
+let g:gruvbox_material_palette = 'material'
+let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_disable_italic_comment = 1
+colorscheme gruvbox-material
 " === Search shorcuts === "
 map <leader>h :%s///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -61,16 +67,16 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 map <leader>p :Files<CR>
 map <leader>b :Buffers<CR>
 
-" ======================= "
-" * === CocSettings === * "
-" ======================= "
+" ======================== "
+" * === Coc-Settings === * "
+" ======================== "
 
 " Give more space for displaying messages.
 set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=200
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -166,16 +172,6 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
-
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
 nmap <silent> <C-s> <Plug>(coc-range-select)
@@ -231,47 +227,6 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.sass-cache
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
-
-" ======================== "
-" === Airline Settings === "
-" ======================== "
-
-" Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
-
-" Update section z to just have line number
-let g:airline_section_z = airline#section#create(['linenr'])
-
-" Do not draw separators for empty sections (only for the active window) >
-let g:airline_skip_empty_sections = 1
-
-" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" Custom setup that removes filetype/whitespace from default vim airline bar
-let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
-
-" Customize vim airline per filetype
-" 'nerdtree'  - Hide nerdtree status line
-" 'list'      - Only show file type plus current line number out of total
-let g:airline_filetype_overrides = {
-  \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', ''), '' ],
-  \ 'list': [ '%y', '%l/%L'],
-  \ }
-
-" Enable powerline fonts
-let g:airline_powerline_fonts = 1
-
-" Enable caching of syntax highlighting groups
-let g:airline_highlighting_cache = 1
-
-" Define custom airline symbols
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" Don't show git changes to current file in airline
-let g:airline#extensions#hunks#enabled=0
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {

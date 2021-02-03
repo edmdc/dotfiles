@@ -103,14 +103,14 @@ gls.left[3] = {
         provider = get_current_file_name,
         condition = buffer_not_empty,
         highlight = {colors.fg, colors.section_bg},
-        separator = "",
+        separator = " ",
         separator_highlight = {colors.section_bg, colors.bg}
     }
 }
 gls.left[9] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
-        icon = '  ',
+        icon = ' ',
         highlight = {colors.red1, colors.bg}
     }
 }
@@ -123,7 +123,7 @@ gls.left[10] = {
 gls.left[11] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
-        icon = '  ',
+        icon = ' ',
         highlight = {colors.orange, colors.bg}
     }
 }
@@ -136,22 +136,13 @@ gls.left[12] = {
 gls.left[13] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
-        icon = '  ',
+        icon = ' ',
         highlight = {colors.blue, colors.section_bg},
         separator = ' ',
         separator_highlight = {colors.section_bg, colors.bg}
     }
 }
 
--- Right side
--- gls.right[1] = {
---     FileFormat = {
---         provider = function() return ' ' .. vim.bo.filetype end,
---         highlight = {colors.fg, colors.section_bg},
---         separator = '',
---         separator_highlight = {colors.section_bg, colors.bg}
---     }
--- }
 gls.right[1] = {
     DiffAdd = {
         provider = 'DiffAdd',
@@ -200,28 +191,18 @@ gls.right[6] = {
 gls.right[7] = {
     PerCent = {
         provider = 'LinePercent',
-        separator = ' ',
+        separator = ' ',
         separator_highlight = {colors.blue, colors.bg},
         highlight = {colors.darkgrey, colors.blue}
     }
 }
--- gls.right[7] = {
---     LineInfo = {
---         provider = 'LineColumn',
---         highlight = {colors.fg, colors.section_bg},
---         -- separator = ' | ',
---         -- separator_highlight = {colors.bg, colors.section_bg}
---         separator = '',
---         separator_highlight = {colors.section_bg, colors.bg}
---     }
--- }
 
 -- Short status line
 gls.short_line_left[1] = {
     BufferType = {
         provider = 'FileTypeName',
         highlight = {colors.fg, colors.section_bg},
-        separator = ' ',
+        separator = ' ',
         separator_highlight = {colors.section_bg, colors.bg}
     }
 }
