@@ -44,9 +44,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" let g:gruvbox_italic = '1'
-" let g:gruvbox_italicize_strings = '1'
-" let g:gruvbox_invert_indent_guides = '1'
+let g:gruvbox_italic = '1'
+let g:gruvbox_italicize_strings = '1'
+let g:gruvbox_invert_indent_guides = '1'
 set termguicolors
 " let g:sonokai_style = 'shusia'
 " let g:sonokai_enable_italic = 1
@@ -54,11 +54,11 @@ set termguicolors
 " colorscheme sonokai
 
 set background=dark
-let g:gruvbox_material_palette = 'material'
-let g:gruvbox_material_background = 'soft'
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_disable_italic_comment = 1
-colorscheme gruvbox-material
+" let g:gruvbox_material_palette = 'material'
+" let g:gruvbox_material_background = 'soft'
+" let g:gruvbox_material_enable_italic = 1
+" let g:gruvbox_material_disable_italic_comment = 1
+colorscheme gruvbox
 " === Search shorcuts === "
 map <leader>h :%s///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -174,8 +174,8 @@ omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -211,6 +211,14 @@ nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" ================= "
+" BarBar  Shortcuts "
+" ================= "
+
+" Magic buffer-picking mode
+nnoremap <silent> <C-s> :BufferPick<CR>
+nnoremap <silent> <A-,> :BufferPrevious<CR>
+nnoremap <silent> <A-.> :BufferNext<CR>
 " ================= "
 " NerdTree Settings "
 " ================= "

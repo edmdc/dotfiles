@@ -13,9 +13,10 @@ return require('packer').startup(function()
   
   -- ## Autocompletion ## --
   use {'neoclide/coc.nvim', branch = 'release'}
+  use {'rodrigore/coc-tailwind-intellisense', run = 'npm install'}
 
   -- ## Coloscheme, Statusline, BufferBar ## --
-  -- use 'morhetz/gruvbox'
+  use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
   use 'kyazdani42/nvim-web-devicons'
   use {
@@ -39,6 +40,6 @@ return require('packer').startup(function()
   use 'tmux-plugins/vim-tmux-focus-events'
   use 'tmux-plugins/vim-tmux'
   use 'thaerkh/vim-indentguides'
-  use 'iamcco/markdown-preview.nvim'
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = "MarkdowPreview" }
   use 'mhinz/vim-signify'
 end)
