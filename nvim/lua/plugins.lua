@@ -8,8 +8,12 @@ return require('packer').startup(function()
   use 'jparise/vim-graphql'
 
   -- ## Fuzzy File Finder ## --
-  use {'junegunn/fzf', run = ':fzf#install()'}
-  use 'junegunn/fzf.vim'
+  -- use {'junegunn/fzf', run = ':fzf#install()'}
+  -- use 'junegunn/fzf.vim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
   
   -- ## Autocompletion ## --
   use {'neoclide/coc.nvim', branch = 'release'}

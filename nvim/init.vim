@@ -64,8 +64,12 @@ map <leader>h :%s///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " fzf shortcuts
-map <leader>p :Files<CR>
-map <leader>b :Buffers<CR>
+" map <leader>p :Files<CR>
+" map <leader>b :Buffers<CR>
+nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>gc <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " ======================== "
 " * === Coc-Settings === * "
