@@ -75,7 +75,10 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tkill='tmux kill-server'
 alias tkiss='tmux kill-session -t'
-alias ls='exa'
+alias ls='exa -la'
+alias pym='python manage.py'
+alias nd='npm run dev'
+alias yd='yarn dev'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -96,3 +99,9 @@ alias ls='exa'
 . /usr/local/opt/asdf/asdf.sh
 
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/edmdc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/edmdc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/edmdc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/edmdc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

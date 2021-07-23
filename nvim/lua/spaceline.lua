@@ -189,12 +189,16 @@ gls.right[6] = {
     }
 }
 gls.right[7] = {
-    PerCent = {
-        provider = 'LinePercent',
-        separator = ' ',
-        separator_highlight = {colors.blue, colors.bg},
-        highlight = {colors.darkgrey, colors.blue}
-    }
+  LineInfo = {
+    provider = function()
+      local line = vim.fn.line('.')
+      local column = vim.fn.col('.')
+      return string.format("%3d:%2d", line, column)
+    end,
+    separator = ' ',
+    separator_highlight = {colors.bg, colors.bg},
+    highlight = {colors.fg, colors.blue}
+  } 
 }
 
 -- Short status line

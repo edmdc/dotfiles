@@ -220,9 +220,9 @@ nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " ================= "
 
 " Magic buffer-picking mode
-nnoremap <silent> <C-s> :BufferPick<CR>
-nnoremap <silent> <A-,> :BufferPrevious<CR>
-nnoremap <silent> <A-.> :BufferNext<CR>
+" nnoremap <silent> <C-s> :BufferPick<CR>
+" nnoremap <silent> <A-,> :BufferPrevious<CR>
+" nnoremap <silent> <A-.> :BufferNext<CR>
 " ================= "
 " NerdTree Settings "
 " ================= "
@@ -251,4 +251,5 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
 
