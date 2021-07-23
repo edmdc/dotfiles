@@ -28,7 +28,7 @@ return require('packer').startup(function()
         branch = 'main',
         config = function() require 'spaceline' end,
       }
-  use 'romgrk/barbar.nvim' 
+  -- use 'romgrk/barbar.nvim' 
 
   -- ## Tpope Classics ## --
   use 'tpope/vim-surround'
@@ -44,6 +44,6 @@ return require('packer').startup(function()
   use 'tmux-plugins/vim-tmux-focus-events'
   use 'tmux-plugins/vim-tmux'
   use 'thaerkh/vim-indentguides'
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = "MarkdowPreview" }
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
   use 'mhinz/vim-signify'
 end)
