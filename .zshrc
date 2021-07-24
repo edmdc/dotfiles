@@ -8,6 +8,7 @@ export ZSH="/Users/edmdc/.oh-my-zsh"
 
 eval "$(starship init zsh)"
 export PATH=/Users/edmdc/Library/Python/3.9/bin:$PATH
+export PATH=~/go/bin:$PATH
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
