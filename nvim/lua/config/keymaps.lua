@@ -11,8 +11,8 @@ map_key('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, si
 
 --Add leader shortcuts
 local options = { noremap = true, silent = true }
-map_key('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], options)
 map_key('n', '<leader><Space>', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], options)
+map_key('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], options)
 map_key('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], options)
 map_key('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], options)
 map_key('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], options)
@@ -20,6 +20,9 @@ map_key('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()
 map_key('n', '<leader>gr', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], options)
 map_key('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], options)
 map_key('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], options)
+
+-- Nvim Tree Keymaps
+map_key('n', '<leader>n', [[<cmd>NvimTreeToggle<CR>]], options)
 
 -- Better pane navigation
 map_key('n', '<C-h>', [[<C-w>h]], options)

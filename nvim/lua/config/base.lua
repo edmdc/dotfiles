@@ -44,9 +44,6 @@ vim.o.updatetime = 250
 vim.o.showmode = false
 vim.o.autoread = true
 
--- More consistent backspace
-vim.o.backspace = 'indent','eol','start' 
-
 --Set colorscheme (order is important here)
 vim.g.gruvbox_italic = 1
 vim.g.gruvbox_italicize_strings = 1
@@ -55,7 +52,6 @@ vim.cmd [[colorscheme gruvbox]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
-
 
 -- Change tab width for different file types
 vim.api.nvim_exec(
