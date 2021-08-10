@@ -16,6 +16,7 @@ return require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 	use 'norcalli/nvim-colorizer.lua'
   use 'mhartington/formatter.nvim'
+  use 'jparise/vim-graphql'
 
   -- ## Explore files ## --
   use {
@@ -39,11 +40,16 @@ return require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  use 'folke/lsp-colors.nvim'
 
-  -- ## Nvim LSP client and copmletion ## --
+  -- ## Nvim LSP client, copmletion, and diagnostics ## --
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
   use 'L3MON4D3/LuaSnip'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
 
   -- ## Better tmux/nvim interactions ## --
   use 'tmux-plugins/vim-tmux-focus-events'
