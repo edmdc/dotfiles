@@ -32,3 +32,11 @@ map_key('n', '<C-l>', [[<C-w>l]], options)
 
 -- Y yank until the end of line
 map_key('n', 'Y', 'y$', { noremap = true })
+
+-- Trouble keybindings
+map_key("n", "<leader>xx", "<cmd>Trouble<cr>", options)
+map_key("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", options)
+map_key("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>", options)
+map_key("n", "<leader>xl", "<cmd>Trouble loclist<cr>", options)
+map_key("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", options)
+map_key("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", options)
