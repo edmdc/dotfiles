@@ -4,7 +4,7 @@ vim.opt.shortmess:append({c = true})
 
 -- Gutter Settings
 vim.wo.number = true
-vim.wo.signcolumn = 'number'
+vim.wo.signcolumn = 'yes:1'
 
 -- Sesible window splits
 vim.o.splitbelow = true
@@ -59,7 +59,7 @@ vim.api.nvim_exec(
     augroup IndentAccordingToFile
       autocmd!
       autocmd FileType css,scss,go setlocal tabstop=4 softtabstop=4 shiftwidth=4
-      autocmd FileType typescript,typescriptreact,javascript,jsx,lua setlocal tabstop=2 softtabstop=2 shiftwidth=2
+      autocmd FileType typescript,typescriptreact,javascript,jsx,lua,sql setlocal tabstop=2 softtabstop=2 shiftwidth=2
     augroup end
   ]],
 	false
@@ -75,3 +75,5 @@ vim.api.nvim_exec(
 ]],
   false
 )
+
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]]
