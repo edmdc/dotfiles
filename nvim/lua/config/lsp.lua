@@ -40,10 +40,13 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Change diagnostic symbols in gutter
-local signs = { Error = "✗", Warning = "✻", Hint = "﹅", Information = "⦿" }
+local signs = { Error = "❌", Warning = "⚠️", Hint = "💡", Information = "ℹ︎" }
 
 for type, icon in pairs(signs) do
   local hl = "LspDiagnosticsSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false,
+})
