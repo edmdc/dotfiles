@@ -1,3 +1,13 @@
+local execute = vim.api.nvim_command
+local fn = vim.fn
+
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  execute 'packadd packer.nvim'
+end
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
@@ -13,7 +23,6 @@ return require('packer').startup(function()
 
   -- ## Syntax Highlight & Formatter ## --
   use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
 	use 'norcalli/nvim-colorizer.lua'
   use 'mhartington/formatter.nvim'
   use 'jparise/vim-graphql'
@@ -56,9 +65,7 @@ return require('packer').startup(function()
   use 'tmux-plugins/vim-tmux'
 
   -- ## Preview Markdown files on Browser ## --
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
-
-  -- ## Smooth scrolling ## --
+  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
 end)
 
  -- Removed plugins that may later be useful
