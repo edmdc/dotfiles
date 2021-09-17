@@ -58,7 +58,7 @@ vim.api.nvim_exec(
   [[
     augroup IndentAccordingToFile
       autocmd!
-      autocmd FileType css,scss,go,python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+      autocmd FileType css,scss,go,python,html setlocal tabstop=4 softtabstop=4 shiftwidth=4
       autocmd FileType typescript,typescriptreact,javascript,jsx,lua,sql setlocal tabstop=2 softtabstop=2 shiftwidth=2
     augroup end
   ]],
